@@ -1,0 +1,13 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+odofit.com	TRUE	/	FALSE	1999999999	_landing_page	%2F
+www.odofit.com	TRUE	/	FALSE	1999999999	cart	5f4b10a9a8216123bf4ba853a98b73c0
+www.odofit.com	TRUE	/	FALSE	1999999999	cart_ts	1660301832
+www.odofit.com	TRUE	/	FALSE	1999999999	localization	US
+odofit.com	TRUE	/	FALSE	1999999999	_y	3ada2319-0496-4099-bc50-a1e5a02495d8
+odofit.com	TRUE	/	FALSE	1999999999	_s	87f4d0a4-2836-47de-9142-7101b3ce1bd1
+odofit.com	TRUE	/	FALSE	1999999999	_shopify_y	3ada2319-0496-4099-bc50-a1e5a02495d8
+www.odofit.com	TRUE	/	FALSE	1999999999	SameSite	Lax
+odofit.com	TRUE	/	FALSE	1999999999	_shopify_s	87f4d0a4-2836-47de-9142-7101b3ce1bd1
+www.odofit.com	TRUE	/	FALSE	1999999999	SameSite	Lax
+
