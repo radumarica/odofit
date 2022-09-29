@@ -1624,226 +1624,178 @@
           .site-header__cart::after {
           border-color: #00a0f1;
         }
+        body {
+          margin: 0;
+          font-family: Helvetica, sans-serif;
+          background-color: #f4f4f4;
+        }
+
+        a {
+          color: #000;
+        }
+
+        /* header */
+
+        .header {
+          background-color: #f5f5f5;
+          box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+          position: fixed;
+          width: 100%;
+          z-index: 3;
+          cursor: pointer;
+        }
+
+        .header ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          overflow: hidden;
+          background-color: #fff;
+        }
+
+        .header li a {
+          display: block;
+          padding: 10px 0px;
+          border-right: 1px solid #f4f4f4;
+          text-decoration: none;
+        }
+
+        .header li a:hover,
+        .header .menu-btn:hover {
+          background-color: #f4f4f4;
+        }
+
+        .header .logo {
+          display: block;
+          float: left;
+          font-size: 2em;
+          padding: 10px 20px;
+          text-decoration: none;
+        }
+
+        /* menu */
+
+        .header .menu {
+          clear: both;
+          max-height: 0;
+          transition: max-height 0.2s ease-out;
+        }
+
+        /* menu icon */
+
+        .header .menu-icon {
+          cursor: pointer;
+          display: inline-block;
+          float: right;
+          padding: 28px 20px;
+          position: relative;
+          user-select: none;
+        }
+
+        .header .menu-icon .navicon {
+          background: #333;
+          display: block;
+          height: 2px;
+          position: relative;
+          transition: background 0.2s ease-out;
+          width: 18px;
+        }
+
+        .header .menu-icon .navicon:before,
+        .header .menu-icon .navicon:after {
+          background: #333;
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          transition: all 0.2s ease-out;
+          width: 100%;
+        }
+
+        .header .menu-icon .navicon:before {
+          top: 5px;
+        }
+
+        .header .menu-icon .navicon:after {
+          top: -5px;
+        }
+
+        /* menu btn */
+
+        .header .menu-btn {
+          display: none;
+        }
+
+        .header .menu-btn:checked ~ .menu {
+          max-height: 240px;
+        }
+
+        .header .menu-btn:checked ~ .menu-icon .navicon {
+          background: transparent;
+        }
+
+        .header .menu-btn:checked ~ .menu-icon .navicon:before {
+          transform: rotate(-45deg);
+        }
+
+        .header .menu-btn:checked ~ .menu-icon .navicon:after {
+          transform: rotate(45deg);
+        }
+
+        .header
+          .menu-btn:checked
+          ~ .menu-icon:not(.steps)
+          .navicon:before,
+        .header
+          .menu-btn:checked
+          ~ .menu-icon:not(.steps)
+          .navicon:after {
+          top: 0;
+        }
+
+        /* 48em = 768px */
+
+        @media (min-width: 48em) {
+          .header li {
+            float: left;
+          }
+          .header li a {
+            padding: 20px 30px;
+          }
+          .header .menu {
+            clear: none;
+            float: right;
+            max-height: none;
+          }
+          .header .menu-icon {
+            display: none;
+          }
+        }
       </style>
 
-      <div
-        class="site-header site-header--homepage site-header--transparent"
-        data-section-id="header"
-        data-section-type="header-section"
-        data-drawer-push
-        data-transparent-header="true"
-      >
-        <header class="site-header__wrapper" role="banner">
-          <div class="site-header-sections page-width">
-            <nav
-              class="site-header__section site-header__section--button"
-              data-site-navigation
-              role="navigation"
+      <header class="header">
+        <a href="/" class="logo">ODOFIT</a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"
+          ><span class="navicon"></span
+        ></label>
+        <ul class="menu">
+          <li>
+            <a
+              target="_blank"
+              href="products/odofit-compression-brace.html"
+              >ODOFIT Compression Brace</a
             >
-              <button
-                class="site-header__navigation btn btn--clear btn--square"
-                aria-expanded="false"
-                data-navigation-button
-              >
-                <span class="burger-icon burger-icon--top"></span>
-                <span class="burger-icon burger-icon--mid"></span>
-                <span class="burger-icon burger-icon--bottom"></span>
-                <span class="icon__fallback-text">Menu</span>
-              </button>
-              <div
-                class="navigation supports-no-js critical-hide"
-                data-section-id="header"
-                data-section-type="navigation"
-                aria-hidden="true"
-              >
-                <div class="navigation__container">
-                  <ul class="navigation__links">
-                    <li
-                      class="navigation__link navigation__entrance-animation navigation__link--active"
-                    >
-                      <a href="index.html" aria-current="page"
-                        >HOME</a
-                      >
-                    </li>
-
-                    <li
-                      class="navigation__link navigation__entrance-animation"
-                    >
-                      <a href="collections/all.html">Products</a>
-                    </li>
-
-                    <li
-                      class="navigation__link navigation__entrance-animation"
-                    >
-                      <a href="blogs/news.html">BLOG</a>
-                    </li>
-
-                    <li
-                      class="navigation__link navigation__entrance-animation"
-                    >
-                      <a href="pages/contact.html">Contact</a>
-                    </li>
-                  </ul>
-
-                  <ul class="navigation__links">
-                    <li
-                      class="navigation__link navigation__link--secondary navigation__entrance-animation"
-                    >
-                      <a href="search.html">Search</a>
-                    </li>
-                  </ul>
-
-                  <div
-                    class="navigation__social-sharing navigation__entrance-animation"
-                  >
-                    <div class="social-links social-links--large">
-                      <ul class="list--inline">
-                        <li class="social-links__icon">
-                          <a
-                            target="_blank"
-                            href="https://www.facebook.com/Odofit"
-                            title="ODOFIT on Facebook"
-                            tabindex="-1"
-                          >
-                            <svg
-                              aria-hidden="true"
-                              focusable="false"
-                              role="presentation"
-                              class="icon icon-facebook"
-                              viewBox="0 0 8.4 20.6"
-                            >
-                              <path
-                                fill="#444"
-                                d="M8.4 6H5.6V4.1c0-.7.5-.9.8-.9h2V0H5.6C2.5 0 1.8 2.4 1.8 3.9V6H0v3.3h1.8v9.3h3.8V9.3h2.5L8.4 6z"
-                              />
-                            </svg>
-                            <span class="icon__fallback-text"
-                              >Facebook</span
-                            >
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div
-                    class="navigation__search navigation__entrance-animation"
-                  >
-                    <form
-                      action="https://www.odofit.com/search"
-                      method="get"
-                      role="search"
-                    >
-                      <div class="input-group--underline">
-                        <input
-                          class="input-group__field"
-                          type="search"
-                          name="q"
-                          value=""
-                          placeholder="Search"
-                          aria-label="Search"
-                          tabindex="-1"
-                        />
-                        <div class="input-group__btn">
-                          <button
-                            type="submit"
-                            class="btn btn--clear btn--square"
-                            tabindex="-1"
-                          >
-                            <svg
-                              aria-hidden="true"
-                              focusable="false"
-                              role="presentation"
-                              class="icon icon-search"
-                              viewBox="0 0 21.4 21.4"
-                            >
-                              <path
-                                fill="#444"
-                                d="M13.4 0c-4.4 0-8 3.6-8 8 0 1.8.6 3.5 1.7 4.9L0 20l1.4 1.4 7.1-7.1c1.4 1.1 3.1 1.7 4.9 1.7 4.4 0 8-3.6 8-8s-3.6-8-8-8zm0 14c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                              />
-                            </svg>
-                            <span class="icon__fallback-text"
-                              >Search again</span
-                            >
-                          </button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </nav>
-            <div
-              class="site-header__section site-header__section--title"
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="products/odofit-resistance-bands.html"
+              >ODOFIT Resistance Bands</a
             >
-              <h1
-                class="site-header__logo-wrapper h4"
-                itemscope
-                itemtype="http://schema.org/Organization"
-              >
-                <a
-                  href="index.html"
-                  itemprop="url"
-                  class="site-header__logo"
-                >
-                  <style>
-                    .site-header__logo-image {
-                      height: 50px;
-                    }
-                  </style>
-
-                  <img
-                    class="site-header__logo-image"
-                    src="../cdn.shopify.com/s/files/1/0615/4928/1493/files/imageedit_7_3382580420_x509f4c.png?v=1640173912"
-                    srcset="
-                      //cdn.shopify.com/s/files/1/0615/4928/1493/files/imageedit_7_3382580420_x50.png?v=1640173912    1x,
-                      //cdn.shopify.com/s/files/1/0615/4928/1493/files/imageedit_7_3382580420_x50@2x.png?v=1640173912 2x
-                    "
-                    alt="ODOFIT"
-                    itemprop="logo"
-                  />
-
-                  <img
-                    class="site-header__logo-image site-header__logo-image--transparent"
-                    src="../cdn.shopify.com/s/files/1/0615/4928/1493/files/imageedit_7_3382580420_x509f4c.png?v=1640173912"
-                    srcset="
-                      //cdn.shopify.com/s/files/1/0615/4928/1493/files/imageedit_7_3382580420_x50.png?v=1640173912    1x,
-                      //cdn.shopify.com/s/files/1/0615/4928/1493/files/imageedit_7_3382580420_x50@2x.png?v=1640173912 2x
-                    "
-                    alt="ODOFIT"
-                    itemprop="logo"
-                  />
-                </a>
-              </h1>
-            </div>
-            <div
-              class="site-header__section site-header__section--button"
-            >
-              <a
-                href="cart.html"
-                class="btn btn--clear btn--square btn--hover-scale site-header__cart ajax-cart__toggle"
-                aria-expanded="false"
-              >
-                <svg
-                  aria-hidden="true"
-                  focusable="false"
-                  role="presentation"
-                  class="icon icon-header-cart"
-                  viewBox="0 0 24.3 26"
-                >
-                  <path
-                    d="M22.6 21.5v-2H7.9c-.2 0-.4-.1-.4-.1 0-.1 0-.3.2-.5l2.3-2.1 13.2-1.4 1.1-10h-18L4.6 1 .5 0 0 1.9l3.1.7 5.2 13-2 1.8c-.8.7-1 1.8-.7 2.7.4.9 1.2 1.4 2.3 1.4h14.7zM7.1 7.4H22l-.7 6.2-11.2 1.2-3-7.4z"
-                  />
-                  <ellipse cx="8.1" cy="24.4" rx="1.6" ry="1.6" />
-                  <ellipse cx="21.7" cy="24.4" rx="1.6" ry="1.6" />
-                </svg>
-                <span class="icon__fallback-text">View cart</span>
-                <span class="site-header__cart-bubble"></span>
-              </a>
-            </div>
-          </div>
-        </header>
-      </div>
+          </li>
+        </ul>
+      </header>
     </div>
 
     <div class="main-content" data-drawer-push>
